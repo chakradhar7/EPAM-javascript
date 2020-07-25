@@ -12,21 +12,25 @@ function EmailValidation() {
     var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     var textemail = document.getElementById("email_verf");
     var form = document.getElementById("form");
+    var box = document.getElementById('email');
     //console.log(email.match(pattern));
     if (email.match(pattern)) {
         form.classList.add("valid");
         form.classList.remove("invalid");
         textemail.innerHTML = "Your Email is valid";
         textemail.style.color = "green";
+        box.style.backgroundColor = "#98FB98";
     }
     else {
         form.classList.add("invalid");
         form.classList.remove("valid");
         textemail.innerHTML = "Your Email is invalid";
         textemail.style.color = "red";
+        box.style.backgroundColor = "#FFA07A";
     }
 }
 function PasswordValidation() {
+    var box = document.getElementById('psw');
     var password = document.getElementById("psw").value;
     var pass_verf = document.getElementById("pass_verf");
     var lowerCaseLetters = /[a-z]/g;
@@ -43,6 +47,7 @@ function PasswordValidation() {
         form.classList.remove("invalid");
         pass_verf.innerHTML = "Password is valid";
         pass_verf.style.color = "green";
+        box.style.backgroundColor = "#98FB98";
     }
     else
     {
@@ -50,9 +55,11 @@ function PasswordValidation() {
         form.classList.remove("valid");
         pass_verf.innerHTML = "password is invalid it should contain lowercase,upercase,numeric,special character and length should be greater than 8 characters ";
         pass_verf.style.color = "red";
+        box.style.backgroundColor = "#FFA07A";
     }
 }
 function RepeatPasswordValidation() {
+    var box = document.getElementById('psw-repeat');
     var RePassword = document.getElementById("psw-repeat").value;
     var re_pass = document.getElementById("re-pass-verf");
     var password = document.getElementById("psw").value;
@@ -63,6 +70,7 @@ function RepeatPasswordValidation() {
         form.classList.remove("invalid");
         re_pass.innerHTML = "Password Matched";
         re_pass.style.color = "green";
+        box.style.backgroundColor = "#98FB98";
     }
     else
     {
@@ -70,9 +78,11 @@ function RepeatPasswordValidation() {
         form.classList.remove("valid");
         re_pass.innerHTML = "Password not Matched";
         re_pass.style.color = "red";
+        box.style.backgroundColor = "#FFA07A";
     }
 }
 function NumberValidation() {
+    var box = document.getElementById('number');
     var Number = document.getElementById("number").value;
     var pattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
     var num_verf = document.getElementById("number-verf");
@@ -82,6 +92,7 @@ function NumberValidation() {
         form.classList.remove("invalid");
         num_verf.innerHTML = "phone number is valid";
         num_verf.style.color = "green";
+        box.style.backgroundColor = "#98FB98";
     }
     else 
     {
@@ -89,5 +100,6 @@ function NumberValidation() {
         form.classList.remove("valid");
         num_verf.innerHTML = "phone number is not valid";
         num_verf.style.color = "red";
+        box.style.backgroundColor = "#FFA07A";
     }
 }
